@@ -155,9 +155,10 @@ const state = {lang:'fa',make:'',model:'',year:'',trim:'',vehicle:null,category:
 let toastTimer;
 function getText(key){return TEXT[state.lang][key] || key}
 function format(value){return Number(value).toLocaleString(state.lang === 'fa' ? 'fa-IR' : 'en-US')}
+function formatYear(value){return Number(value).toLocaleString(state.lang === 'fa' ? 'fa-IR' : 'en-US', {useGrouping:false})}
 function money(value){return format(value)+' '+getText('currency')}
 function named(value){return value[state.lang]}
-function vehicleName(v){return [named(v.make),named(v.model),format(v.year),named(v.trim)].join(' / ')}
+function vehicleName(v){return [named(v.make),named(v.model),formatYear(v.year),named(v.trim)].join(' / ')}
 function fillSelect(id,placeholder,options,value=''){
   const el=$(id);el.replaceChildren();
   const first=document.createElement('option');first.value='';first.textContent=getText(placeholder);el.append(first);
@@ -172,7 +173,7 @@ function populateVehicleSelectors(){
   const byMake=VEHICLES.filter(v=>v.make.fa===state.make);
   fillSelect('vehicle-model','selectModel',uniqueLocalized('model',byMake),state.model);
   const byModel=byMake.filter(v=>v.model.fa===state.model);
-  fillSelect('vehicle-year','selectYear',[...new Set(byModel.map(v=>v.year))].map(v=>[v,format(v)]),state.year);
+  fillSelect('vehicle-year','selectYear',[...new Set(byModel.map(v=>v.year))].map(v=>[v,formatYear(v)]),state.year);
   const byYear=byModel.filter(v=>v.year===state.year);
   fillSelect('vehicle-trim','selectTrim',uniqueLocalized('trim',byYear),state.trim);
   $('apply-fitment').disabled=!(state.make&&state.model&&state.year&&state.trim);
