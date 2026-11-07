@@ -10,7 +10,11 @@ I built **PartSync** as an independent, interactive front-end portfolio project 
 
 My implementation includes bilingual Persian/English language switching, RTL/LTR layouts, SKU and brand search, category filtering, price sorting, and a demonstration cart with quantity controls.
 
-**Technical references:** [Architecture](docs/architecture.md) · [Illustrative SQL schema](docs/fitment-schema.sql) · [Browser smoke test](tests/smoke_test.py).\n\n**Browser tests:** Install `pip install pytest playwright` and `playwright install chromium`, then run `pytest -q`.\n\n**Live demo:** Enable GitHub Pages from `main` → `/(root)`; this self-contained `index.html` runs without dependencies.
+**Technical references:** [Architecture](docs/architecture.md) · [Illustrative SQL schema](docs/fitment-schema.sql) · [Browser smoke test](tests/smoke_test.py).
+
+**Browser tests:** Install `pip install pytest playwright` and `playwright install chromium`, then run `pytest -q`.
+
+**Live demo:** https://mahdishoghinezhad.github.io/automotive-parts-store-demo/ — self-contained static HTML, no dependencies required.
 
 **Important:** This is an independently built **front-end demonstration**, not a commissioned, completed production store. All product data, fitment mappings and prices are fictional. This repository does not implement a backend, persistent database, real inventory, checkout, payments, or administration.
 
@@ -22,7 +26,11 @@ My implementation includes bilingual Persian/English language switching, RTL/LTR
 
 امکانات نمونه شامل تغییر واقعی زبان فارسی و انگلیسی، چیدمان راست‌چین و چپ‌چین، جستجوی کد فنی، دسته‌بندی محصولات، مرتب‌سازی قیمت و سبد خرید نمایشی است.
 
-برای مشاهده جزئیات فنی، [معماری پیشنهادی](docs/architecture.md)، [طرح SQL](docs/fitment-schema.sql) و [تست مرورگر](tests/smoke_test.py) را مطالعه کنید.\n\nبرای اجرای این نمونه کافی است `index.html` را در مرورگر باز کنید. برای انتشار آنلاین می‌توان از GitHub Pages استفاده کرد.
+برای مشاهده جزئیات فنی، [معماری پیشنهادی](docs/architecture.md)، [طرح SQL](docs/fitment-schema.sql) و [تست مرورگر](tests/smoke_test.py) را مطالعه کنید.
+
+**نمایش آنلاین نمونه:** https://mahdishoghinezhad.github.io/automotive-parts-store-demo/
+
+برای اجرای نسخه محلی کافی است فایل `index.html` را در مرورگر باز کنید.
 
 **توضیح مهم:** این پروژه یک **نمونه تعاملی فرانت‌اند** است، نه فروشگاه عملیاتی تحویل‌شده به مشتری. نام محصولات، قیمت‌ها و اطلاعات سازگاری خودروها آزمایشی‌اند. در نسخه فعلی بک‌اند، دیتابیس متصل، سفارش واقعی، پرداخت یا پنل مدیریت وجود ندارد.
 
