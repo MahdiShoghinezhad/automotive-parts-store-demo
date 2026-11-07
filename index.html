@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#091c2b">
+  <meta name="description" content="PartSync — bilingual, interactive automotive spare-parts fitment storefront demo by Mahdi Shoghinezhad. نمونه تعاملی دوزبانه فروشگاه قطعات خودرو توسط مهدی شوقی‌نژاد.">
+  <title>PartSync | Automotive Parts Store Demo — Mahdi Shoghinezhad</title>
+  <style>
+:root{--navy:#091c2b;--deep:#102b40;--teal:#1a9ca9;--mint:#43c5c8;--ink:#122b3e;--muted:#678194;--bg:#f5f8fa;--line:#e3edf0;--white:#fff;--radius:16px;--shadow:0 12px 42px rgba(22,48,64,.06)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Tahoma,'Segoe UI',Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65}body[dir=ltr]{font-family:Inter,'Segoe UI',Arial,sans-serif}button,input,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.52;cursor:not-allowed}a{text-decoration:none;color:inherit}button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #f5af62;outline-offset:3px}svg{max-width:100%}.container{width:min(1180px,calc(100% - 48px));margin-inline:auto}.demo-banner{display:flex;gap:9px;align-items:center;justify-content:center;background:#dff2ef;color:#236668;text-align:center;padding:8px 20px;font-size:11px;font-weight:600}.demo-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#1faaa4;flex-shrink:0}.main-header{background:var(--navy);color:white;position:relative;z-index:2}.header-wrap{height:86px;display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{display:flex;align-items:center;gap:12px}.brand-mark{width:46px;height:46px;background:linear-gradient(135deg,#3cb7bc,#78dbd7);color:#093044;border-radius:13px;display:grid;place-items:center;font-weight:900;font-size:21px}.brand-mark span{font-size:12px;position:relative;top:-9px}.brand-copy{display:flex;flex-direction:column;line-height:1.25}.brand-copy strong{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:23px;letter-spacing:-1px}.brand-copy strong span{color:#52cccd}.brand-copy small{font-size:10px;letter-spacing:.2px;color:#a9c2ce;margin-top:5px}.header-actions{display:flex;align-items:center;gap:12px}.header-signature{text-align:end;display:flex;flex-direction:column;font-size:9px;color:#88aab9;line-height:1.5;margin-inline-end:6px}.header-signature strong{font-size:11px;color:#dbe9ed}.lang-toggle,.cart-open{height:41px;border:1px solid #466073;border-radius:11px;color:#f4fafc;background:#173348;display:flex;align-items:center;justify-content:center;gap:8px;padding:0 15px;font-size:12px;font-weight:700}.lang-toggle:hover,.cart-open:hover{background:#24516b}.lang-globe{font-size:21px;color:#5fd0d1}.cart-open b{background:#39b7bd;color:#0b2938;border-radius:7px;padding:1px 7px;font-size:12px}
+.hero-shell{background:radial-gradient(circle at 35% 80%,#19445d 0%,transparent 52%),linear-gradient(110deg,#0d2638,#112d42 52%,#0a2131);color:#fff;overflow:hidden}.hero-grid{padding-block:52px 65px;display:grid;grid-template-columns:1.13fr .87fr;align-items:center;gap:44px}.hero-copy{position:relative;min-width:0}.eyebrow{display:flex;align-items:center;gap:9px;color:#83ded8;font-size:11px;font-weight:800;letter-spacing:1px}.eyebrow-line{display:inline-block;width:24px;height:2px;background:#63c6c8}.hero-copy h1{font-size:clamp(32px,3.5vw,49px);font-weight:900;line-height:1.45;letter-spacing:-1px;margin:17px 0 12px}.hero-copy h1 em{font-style:normal;color:#76dfdc}.hero-copy>p{max-width:510px;color:#bdced8;font-size:13px;line-height:2;margin:0}.feature-row{display:flex;gap:19px;flex-wrap:wrap;margin-top:22px;font-size:11px;color:#d8eaef}.feature-row i{font-style:normal;color:#5fd8ca}.hero-visual{margin-top:10px;height:148px;overflow:hidden;position:relative}.hero-visual svg{width:100%;height:100%;filter:drop-shadow(0 14px 15px #05172460)}.metric-bar{display:flex;justify-content:space-between;gap:10px;padding-top:13px;border-top:1px solid #385467}.metric-bar div{display:flex;flex-direction:column;gap:0}.metric-bar strong{font-size:20px;color:#eefcff;letter-spacing:1px}.metric-bar span{font-size:10px;color:#95b8c5}.finder{color:var(--ink);background:#fff;padding:26px 27px 23px;border-radius:22px;box-shadow:0 24px 50px #05142160}.finder-top{display:flex;justify-content:space-between;align-items:center;color:#1295a2;font-size:11px;font-weight:800}.finder-symbol{border-radius:12px;width:42px;height:42px;display:grid;place-items:center;background:#e3f7f7;font-size:26px;font-weight:bold;color:#2c9da6}.finder h2{font-size:24px;margin:13px 0 3px}.finder p{font-size:11px;color:var(--muted);margin:0 0 17px}.finder-fields{display:grid;grid-template-columns:1fr 1fr;gap:13px}.finder-fields label{display:flex;flex-direction:column;gap:6px;min-width:0}.finder-fields label>span{font-size:11px;font-weight:800;color:#426074}.finder select,.sort-wrap select{min-height:44px;width:100%;border:1px solid #dce6eb;background:#f9fcfd;color:#18344a;border-radius:10px;padding:10px 9px;outline-color:var(--teal);font-size:12px;min-width:0}.primary-btn{border:0;border-radius:11px;background:#1a9ca9;color:#fff;font-weight:800;min-height:45px;padding:12px 18px;display:flex;align-items:center;justify-content:center;gap:11px;width:100%;font-size:13px}.primary-btn:not(:disabled):hover{background:#117a88}.finder .primary-btn{margin-top:20px}.finder-hint{display:flex;align-items:flex-start;gap:7px;font-size:10px;color:#8a9cab;line-height:1.8;margin-top:13px}.vehicle-status{font-size:11px;font-weight:800;color:#17877f;min-height:1px;margin-top:9px}
+.catalog{padding-block:55px 60px}.section-heading{display:flex;justify-content:space-between;align-items:center;gap:16px}.section-eyebrow{display:block;color:#178d9a;font-size:10px;letter-spacing:1.8px;font-weight:900}.section-heading h2,.about-inner h2{font-size:27px;letter-spacing:-.5px;margin:4px 0 3px}.section-heading p{font-size:12px;color:var(--muted);margin:2px 0}.fitment-chip{padding:8px 12px;border:1px solid #b8e9db;border-radius:9px;font-size:11px;font-weight:700;color:#127c72;background:#e5f8f1;white-space:nowrap}.fitment-chip[hidden]{display:none}.catalog-tools{display:flex;gap:12px;justify-content:space-between;margin-top:27px}.search-box{display:flex;gap:12px;align-items:center;max-width:690px;flex:1;border:1px solid #dce6ed;background:#fff;padding:0 15px;border-radius:12px;color:#6d889b}.search-box input{width:100%;padding:14px 0;border:0;background:none;outline:0;font-size:12px;color:#1a3449;min-width:0}.sort-wrap{display:flex;gap:11px;align-items:center;color:#637f90;font-size:11px;white-space:nowrap}.sort-wrap select{width:auto;min-width:145px;background:#fff}.category-wrap{display:flex;gap:9px;margin:19px 0 20px;overflow-x:auto;padding-bottom:5px}.category-pill{border-radius:50px;background:#fff;border:1px solid #dfebef;padding:9px 19px;font-size:11px;white-space:nowrap;color:#5b7283}.category-pill.active{color:#fff;background:#14394c;border-color:#14394c;font-weight:700}.product-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px}.product-card{border:1px solid #e4edf0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s}.product-card:hover{transform:translateY(-4px);box-shadow:0 13px 32px #1b405117}.product-illustration{height:145px;background:radial-gradient(circle at 50% 45%,#ffffff 0%,#f0f6f7 74%);display:flex;align-items:center;justify-content:center;position:relative}.part-glyph{display:flex;align-items:center;justify-content:center;width:80px;height:80px;border:1px solid #d2e5e8;border-radius:22px;background:linear-gradient(140deg,#fff,#e4f0f3);box-shadow:6px 8px 18px #294f6612;font-size:38px;color:#276778;transform:rotate(-7deg)}.product-badge{position:absolute;top:12px;inset-inline-start:12px;background:#e1f7f0;color:#248173;border-radius:6px;font-size:9px;padding:4px 8px;font-weight:700}.product-badge.base{background:#e9f0f6;color:#57788d}.product-body{padding:15px}.product-brand{font-size:10px;color:#8aa0ad}.product-name{font-size:13px;font-weight:900;line-height:1.75;min-height:43px;margin:5px 0}.product-sku{font-size:10px;color:#8296a4;direction:ltr;text-align:start}.product-divider{border-top:1px solid #edf2f4;margin:13px 0 11px}.product-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px}.product-price{font-size:16px;white-space:nowrap;color:#153449;font-weight:900}.product-price small{font-size:10px;font-weight:400;color:#7d8f9d}.add-btn{border:0;border-radius:10px;background:#dcf6f2;color:#148d8e;width:37px;height:37px;display:grid;place-items:center;font-size:23px;flex-shrink:0}.add-btn:hover{background:#178b99;color:#fff}.empty-state{grid-column:1/-1;padding:60px 15px;background:#fff;border:1px dashed #b9d0d8;border-radius:15px;text-align:center;color:#6e8293}.catalog-footer{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:24px;color:#879cab;font-size:10px}.text-btn{background:none;border:0;color:#167f88;font-weight:700;font-size:11px}.text-btn[hidden]{display:none}.about-strip{background:#eaf3f5;border-top:1px solid #dbe9ed;border-bottom:1px solid #dbe9ed}.about-inner{display:flex;justify-content:space-between;align-items:center;padding-block:38px;gap:30px}.about-inner>div:first-child{max-width:760px}.about-inner h2{font-size:23px;margin:4px 0}.about-inner p{margin:6px 0 0;color:#5f7a88;font-size:12px;line-height:2}.about-meta{border-inline-start:3px solid #2bb8bf;padding-inline-start:18px;display:flex;flex-direction:column;white-space:nowrap;font-size:11px;color:#66818e}.about-meta strong{font-size:17px;color:#153b4f}.about-meta small{font-size:11px}.footer{background:var(--navy);color:#8fa7b6}.footer-row{min-height:70px;display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:10px}.footer-row strong{color:white;font-size:16px}.footer-row strong span{font-size:10px;font-weight:400;color:#9fb3be}
+.overlay{position:fixed;inset:0;background:#051c2c9c;z-index:10}.overlay[hidden]{display:none}.cart-drawer{position:fixed;z-index:11;inset-block:0;inset-inline-end:0;width:min(420px,100vw);background:white;display:flex;flex-direction:column;transform:translateX(-110%);transition:transform .25s;box-shadow:0 0 30px #071d2830;visibility:hidden}.cart-drawer[aria-hidden=false]{transform:translateX(0);visibility:visible}html[dir=ltr] .cart-drawer{transform:translateX(110%)}html[dir=ltr] .cart-drawer[aria-hidden=false]{transform:translateX(0)}.drawer-head{padding:22px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}.drawer-head small{font-size:10px;color:#218a92}.drawer-head h2{font-size:22px;margin:0}.icon-btn{background:#edf5f7;color:#244a5b;border:0;border-radius:9px;font-size:24px;width:36px;height:36px}.cart-items{overflow:auto;flex:1;padding:19px 22px}.cart-line{display:flex;gap:15px;justify-content:space-between;padding:15px 0;border-bottom:1px solid var(--line)}.cart-line strong{font-size:12px;display:block}.cart-line small{display:block;font-size:11px;color:#6c8793}.quantity-controls{display:flex;gap:7px;align-items:center;flex-shrink:0}.quantity-controls button{background:#eaf3f5;border:1px solid #d5e5e9;border-radius:7px;width:27px;height:27px;color:#194e62}.quantity-controls span{min-width:14px;text-align:center}.drawer-bottom{padding:21px 22px 25px;border-top:1px solid var(--line)}.total-row{display:flex;justify-content:space-between;align-items:center;font-size:13px}.total-row strong{font-size:18px}.drawer-bottom p{font-size:10px;color:#768d98;line-height:1.8}.cart-empty{text-align:center;padding:55px 7px;color:#77909d;font-size:13px}.toast{position:fixed;z-index:15;bottom:24px;left:24px;background:#10354a;color:white;padding:12px 18px;border-radius:10px;box-shadow:0 13px 28px #102b4060;opacity:0;transform:translateY(12px);transition:.2s;pointer-events:none;font-size:12px}.toast.show{opacity:1;transform:translateY(0)}
+@media(max-width:1060px){.hero-grid{gap:23px}.product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.header-signature{display:none}}@media(max-width:800px){.hero-grid{grid-template-columns:1fr;padding-block:33px 45px}.hero-copy h1{max-width:650px}.hero-visual{height:110px}.finder{max-width:none}.about-inner{align-items:flex-start}.footer-row{flex-wrap:wrap;padding-block:15px}}@media(max-width:620px){.container{width:min(100% - 26px,1180px)}.header-wrap{height:77px}.brand-copy strong{font-size:19px}.brand-mark{width:38px;height:38px}.brand-copy small{font-size:8px}.header-actions{gap:6px}.lang-toggle,.cart-open{height:39px;padding:0 8px;font-size:10px}.cart-open span[data-i18n=cart]{display:none}.hero-copy h1{font-size:31px}.feature-row{gap:9px;font-size:10px}.hero-visual{height:85px}.finder{padding:20px}.catalog{padding-block:38px}.section-heading h2{font-size:23px}.catalog-tools{flex-wrap:wrap}.search-box{min-width:100%}.sort-wrap{margin-inline-start:auto}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.product-illustration{height:120px}.product-body{padding:11px}.product-name{font-size:12px}.product-price{font-size:13px}.product-price small{font-size:9px}.about-inner{flex-direction:column;gap:14px}.footer-row{gap:8px;font-size:9px}.product-badge{font-size:8px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;scroll-behavior:auto!important}}
+
+</style>
+</head>
+<body>
+  <div class="demo-banner"><span class="demo-dot" aria-hidden="true"></span><span data-i18n="demoNotice"></span></div>
+  <header class="main-header">
+    <div class="container header-wrap">
+      <a class="brand" href="#top" aria-label="PartSync home"><span class="brand-mark" aria-hidden="true">P<span>↗</span></span><span class="brand-copy"><strong>Part<span>Sync</span></strong><small data-i18n="brandTagline"></small></span></a>
+      <div class="header-actions">
+        <span class="header-signature"><span data-i18n="designedBy"></span><strong>Mahdi Shoghinezhad</strong></span>
+        <button id="lang-toggle" type="button" class="lang-toggle" aria-label="Switch to English" title="Switch language"><span class="lang-globe" aria-hidden="true">◎</span><span id="lang-label">English</span></button>
+        <button id="cart-open" type="button" class="cart-open" aria-label="Open cart"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 4h2l2.5 11.5h11l2-8.5H6"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg><span data-i18n="cart"></span><b id="cart-count">0</b></button>
+      </div>
+    </div>
+  </header>
+  <main id="top">
+    <section class="hero-shell">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-line"></span><span data-i18n="eyebrow"></span></div>
+          <h1 data-i18n-html="heroTitle"></h1>
+          <p data-i18n="heroDescription"></p>
+          <div class="feature-row"><span><i>✓</i> <span data-i18n="heroPoint1"></span></span><span><i>✓</i> <span data-i18n="heroPoint2"></span></span><span><i>✓</i> <span data-i18n="heroPoint3"></span></span></div>
+          <div class="hero-visual" aria-hidden="true">
+            <svg viewBox="0 0 660 182" role="img" aria-label="Illustrative car silhouette"><defs><linearGradient id="cargrad" x1="0" x2="1"><stop offset="0" stop-color="#66c9d2"/><stop offset="1" stop-color="#31afbe"/></linearGradient></defs><path d="M28 130C54 120 66 95 92 89L188 75C220 48 248 37 306 35H437C476 39 510 66 536 83L602 101C616 105 628 116 628 130V144H578C576 123 560 111 539 111S501 124 499 144H168C165 123 149 111 128 111S90 124 88 144H35C23 144 20 138 28 130Z" fill="none" stroke="url(#cargrad)" stroke-width="3.5" stroke-linejoin="round"/><path d="M201 75L258 49C275 43 294 43 317 43H425L487 79Z" fill="#20b2bb" fill-opacity=".12" stroke="#66c9d2" stroke-width="2.5"/><path d="M345 45V77M25 148H639" stroke="#5bd4d1" stroke-opacity=".35" stroke-width="2"/><circle cx="128" cy="143" r="26" fill="#0b2539" stroke="#79c5cf" stroke-width="3"/><circle cx="540" cy="143" r="26" fill="#0b2539" stroke="#79c5cf" stroke-width="3"/><circle cx="128" cy="143" r="12" fill="#244b60"/><circle cx="540" cy="143" r="12" fill="#244b60"/></svg>
+          </div>
+          <div class="metric-bar"><div><strong>06</strong><span data-i18n="metricVehicles"></span></div><div><strong>12</strong><span data-i18n="metricProducts"></span></div><div><strong>FA / EN</strong><span data-i18n="metricLanguages"></span></div></div>
+        </div>
+        <aside class="finder" aria-labelledby="finder-title">
+          <div class="finder-top"><div class="finder-symbol">⌁</div><span data-i18n="finderBadge"></span></div>
+          <h2 id="finder-title" data-i18n="finderTitle"></h2>
+          <p data-i18n="finderLead"></p>
+          <div class="finder-fields">
+            <label><span data-i18n="fieldMake"></span><select id="vehicle-make" aria-label="Vehicle brand"></select></label>
+            <label><span data-i18n="fieldModel"></span><select id="vehicle-model" disabled aria-label="Vehicle model"></select></label>
+            <label><span data-i18n="fieldYear"></span><select id="vehicle-year" disabled aria-label="Vehicle year"></select></label>
+            <label><span data-i18n="fieldTrim"></span><select id="vehicle-trim" disabled aria-label="Vehicle trim"></select></label>
+          </div>
+          <button id="apply-fitment" class="primary-btn" disabled type="button"><span data-i18n="showCompatible"></span><span aria-hidden="true">←</span></button>
+          <div class="vehicle-status" id="vehicle-status" role="status" aria-live="polite"></div>
+          <div class="finder-hint"><span aria-hidden="true">ⓘ</span><span data-i18n="finderHint"></span></div>
+        </aside>
+      </div>
+    </section>
+    <section class="catalog container" id="catalog" aria-label="Demo catalog">
+      <div class="section-heading"><div><span class="section-eyebrow" data-i18n="catalogEyebrow"></span><h2 data-i18n="catalogTitle"></h2><p id="catalog-subtitle" aria-live="polite"></p></div><div class="fitment-chip" id="fitment-chip" hidden><span>✓</span><span data-i18n="filterActive"></span></div></div>
+      <div class="catalog-tools"><div class="search-box"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg><input id="catalog-search" type="search" autocomplete="off" data-i18n-placeholder="searchPlaceholder" aria-label="Search product name or SKU"></div><label class="sort-wrap"><span data-i18n="sortBy"></span><select id="catalog-sort"><option value="default" data-i18n="sortFeatured"></option><option value="priceAsc" data-i18n="sortPriceAsc"></option><option value="priceDesc" data-i18n="sortPriceDesc"></option></select></label></div>
+      <div class="category-wrap" id="category-wrap" aria-label="Categories"></div>
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+      <div class="catalog-footer"><button id="clear-filters" type="button" class="text-btn" hidden><span data-i18n="clearFilters"></span> ×</button><span data-i18n="catalogFootnote"></span></div>
+    </section>
+    <section class="about-strip"><div class="container about-inner"><div><span class="section-eyebrow" data-i18n="aboutEyebrow"></span><h2 data-i18n="aboutTitle"></h2><p data-i18n="aboutBody"></p></div><div class="about-meta"><span data-i18n="builtBy"></span><strong>Mahdi Shoghinezhad</strong><small>Full-Stack Software Engineer</small></div></div></section>
+  </main>
+  <footer class="footer"><div class="container footer-row"><strong>PartSync <span>© 2026</span></strong><span data-i18n="footerDisclaimer"></span><span data-i18n="footerCredit"></span></div></footer>
+  <div id="overlay" class="overlay" hidden></div>
+  <aside id="cart-drawer" class="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title" aria-hidden="true" tabindex="-1"><div class="drawer-head"><div><small data-i18n="demoCartLabel"></small><h2 id="cart-title" data-i18n="cartTitle"></h2></div><button type="button" id="cart-close" class="icon-btn" aria-label="Close cart">×</button></div><div id="cart-items" class="cart-items"></div><div class="drawer-bottom"><div class="total-row"><span data-i18n="subtotal"></span><strong id="cart-total"></strong></div><p data-i18n="cartDisclaimer"></p><button class="primary-btn" id="cart-clear" type="button"><span data-i18n="clearCart"></span></button></div></aside>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+/* Fictional demonstration data. No vehicle or part compatibility is verified. */
+const VEHICLES = [
+  {id:'206-2',make:{fa:'پژو',en:'Peugeot'},model:{fa:'۲۰۶',en:'206'},year:'1398',trim:{fa:'تیپ ۲',en:'Type 2'}},
+  {id:'206-5',make:{fa:'پژو',en:'Peugeot'},model:{fa:'۲۰۶',en:'206'},year:'1398',trim:{fa:'تیپ ۵',en:'Type 5'}},
+  {id:'pars',make:{fa:'پژو',en:'Peugeot'},model:{fa:'پارس',en:'Pars'},year:'1397',trim:{fa:'TU5',en:'TU5'}},
+  {id:'dena',make:{fa:'ایران‌خودرو',en:'Iran Khodro'},model:{fa:'دنا پلاس',en:'Dena Plus'},year:'1400',trim:{fa:'EF7',en:'EF7'}},
+  {id:'pride',make:{fa:'سایپا',en:'Saipa'},model:{fa:'پراید ۱۳۱',en:'Pride 131'},year:'1397',trim:{fa:'SE',en:'SE'}},
+  {id:'tiba',make:{fa:'سایپا',en:'Saipa'},model:{fa:'تیبا ۲',en:'Tiba 2'},year:'1399',trim:{fa:'EX',en:'EX'}}
+];
+const PRODUCTS = [
+  {id:1,sku:'OF-206-01',category:'filters',price:315000,fit:['206-2','206-5'],icon:'◉',name:{fa:'فیلتر روغن نمونه پژو ۲۰۶',en:'Peugeot 206 sample oil filter'},brand:{fa:'برند آزمایشی آلفا',en:'Demo Brand Alpha'}},
+  {id:2,sku:'BR-102',category:'brakes',price:920000,fit:['206-2','206-5'],icon:'▤',name:{fa:'لنت ترمز جلو نمونه پژو ۲۰۶',en:'Peugeot 206 sample front brake pads'},brand:{fa:'برند آزمایشی بتا',en:'Demo Brand Beta'}},
+  {id:3,sku:'SP-TU5',category:'engine',price:460000,fit:['206-5','pars'],icon:'✦',name:{fa:'شمع موتور نمونه TU5',en:'TU5 sample spark plugs'},brand:{fa:'برند آزمایشی گاما',en:'Demo Brand Gamma'}},
+  {id:4,sku:'AF-PARS',category:'filters',price:280000,fit:['pars'],icon:'▧',name:{fa:'فیلتر هوا نمونه پارس',en:'Pars sample air filter'},brand:{fa:'برند آزمایشی آلفا',en:'Demo Brand Alpha'}},
+  {id:5,sku:'BL-EF7',category:'engine',price:770000,fit:['dena'],icon:'↻',name:{fa:'تسمه دینام نمونه EF7',en:'EF7 sample alternator belt'},brand:{fa:'برند آزمایشی دلتا',en:'Demo Brand Delta'}},
+  {id:6,sku:'IG-EF7',category:'electrical',price:1890000,fit:['dena'],icon:'ϟ',name:{fa:'کوئل نمونه موتور EF7',en:'EF7 sample ignition coil'},brand:{fa:'برند آزمایشی گاما',en:'Demo Brand Gamma'}},
+  {id:7,sku:'DS-131',category:'brakes',price:1080000,fit:['pride'],icon:'◎',name:{fa:'دیسک ترمز جلو نمونه پراید',en:'Pride sample front brake disc'},brand:{fa:'برند آزمایشی بتا',en:'Demo Brand Beta'}},
+  {id:8,sku:'CF-TB2',category:'filters',price:240000,fit:['tiba'],icon:'▦',name:{fa:'فیلتر کابین نمونه تیبا ۲',en:'Tiba 2 sample cabin filter'},brand:{fa:'برند آزمایشی آلفا',en:'Demo Brand Alpha'}},
+  {id:9,sku:'OX-221',category:'electrical',price:1350000,fit:['206-5','pars','dena'],icon:'⌁',name:{fa:'سنسور اکسیژن نمونه',en:'Sample oxygen sensor'},brand:{fa:'برند آزمایشی دلتا',en:'Demo Brand Delta'}},
+  {id:10,sku:'WR-131',category:'electrical',price:410000,fit:['pride'],icon:'ϟ',name:{fa:'وایر شمع نمونه پراید',en:'Pride sample ignition leads'},brand:{fa:'برند آزمایشی گاما',en:'Demo Brand Gamma'}},
+  {id:11,sku:'BR-TB2',category:'brakes',price:690000,fit:['tiba'],icon:'▤',name:{fa:'لنت ترمز عقب نمونه تیبا',en:'Tiba sample rear brake pads'},brand:{fa:'برند آزمایشی بتا',en:'Demo Brand Beta'}},
+  {id:12,sku:'OF-DN7',category:'filters',price:365000,fit:['dena'],icon:'◉',name:{fa:'فیلتر روغن نمونه دنا پلاس',en:'Dena Plus sample oil filter'},brand:{fa:'برند آزمایشی آلفا',en:'Demo Brand Alpha'}}
+];
+const CATEGORIES = ['all','engine','brakes','filters','electrical'];
+
+</script>
+<script>
+/* PartSync — a deliberately front-end-only, bilingual technical showcase. */
+'use strict';
+const TEXT = {
+  fa: {
+    demoNotice:'دموی فنی مستقل — نام قطعات، قیمت‌ها و سازگاری خودروها کاملاً آزمایشی هستند و برای خرید واقعی معتبر نیستند.',
+    brandTagline:'نمونه تخصصی فروشگاه قطعات خودرو', designedBy:'طراحی و پیاده‌سازی توسط', cart:'سبد خرید',
+    eyebrow:'نمونه‌کار اختصاصی تجارت الکترونیک',
+    heroTitle:'قطعه درست برای <em>خودروی درست.</em><br>جستجوی سریع، خرید ساده.',
+    heroDescription:'یک تجربه دوزبانه برای انتخاب خودرو، بررسی قطعات نمونه سازگار و مرور یک کاتالوگ تخصصی. طراحی شده برای نمایش معماری تجربه کاربری فروشگاه قطعات خودرو.',
+    heroPoint1:'انتخاب دقیق خودرو',heroPoint2:'تطبیق قطعه و خودرو',heroPoint3:'جستجوی کد فنی',
+    metricVehicles:'پیکربندی خودرو',metricProducts:'محصول نمایشی',metricLanguages:'زبان و دو جهت صفحه',
+    finderBadge:'Vehicle Fitment Demo',finderTitle:'خودرویت را انتخاب کن',finderLead:'با انتخاب برند، مدل، سال و تیپ، فقط قطعات آزمایشی سازگار نمایش داده می‌شوند.',
+    fieldMake:'برند سازنده',fieldModel:'مدل خودرو',fieldYear:'سال تولید',fieldTrim:'تیپ / موتور',
+    selectMake:'انتخاب برند',selectModel:'انتخاب مدل',selectYear:'انتخاب سال',selectTrim:'انتخاب تیپ',
+    showCompatible:'نمایش قطعات سازگار',finderHint:'اطلاعات سازگاری فقط برای نمایش قابلیت فنی تهیه شده است.',
+    vehicleSelected:'خودروی انتخاب‌شده:',catalogEyebrow:'DEMO PRODUCT CATALOG',catalogTitle:'کاتالوگ قطعات خودرو',
+    catalogAll:'نمایش {count} قطعه نمونه',catalogFiltered:'نمایش {count} قطعه نمونه سازگار با {vehicle}',filterActive:'فیلتر خودرو فعال است',
+    searchPlaceholder:'جستجو بر اساس نام قطعه، برند یا کد فنی (مثلاً BR-102)',sortBy:'مرتب‌سازی:',sortFeatured:'پیشنهادی',sortPriceAsc:'قیمت: کم به زیاد',sortPriceDesc:'قیمت: زیاد به کم',
+    all:'همه قطعات',engine:'موتوری',brakes:'سیستم ترمز',filters:'فیلترها',electrical:'برق خودرو',
+    demoProduct:'محصول نمونه',compatible:'سازگار (آزمایشی)',partCode:'کد فنی',currency:'تومان',addToCart:'افزودن به سبد',
+    empty:'نتیجه‌ای در داده‌های نمونه پیدا نشد. جستجو یا فیلتر را تغییر بده.',clearFilters:'پاک‌کردن فیلترها',catalogFootnote:'قیمت و مشخصات صرفاً نمونه‌اند؛ موجودی واقعی و امکان خرید در این نسخه وجود ندارد.',
+    aboutEyebrow:'ABOUT THE WORK',aboutTitle:'طراحی‌شده برای نمایش یک مسئله واقعی',aboutBody:'در این نمونه، من به‌عنوان توسعه‌دهنده فول‌استک بر تجربه انتخاب خودرو، مدل‌سازی مفهومی سازگاری قطعات، رابط واکنش‌گرا و طراحی دوزبانه تمرکز کرده‌ام. این پروژه یک نمونه اولیه قابل آزمایش است، نه فروشگاه عملیاتی مشتری.',
+    builtBy:'طراحی و توسعه نمونه:',footerDisclaimer:'دموی غیرتجاری — بدون پردازش سفارش یا پرداخت',footerCredit:'نمونه‌کار شخصی مهدی شوقی‌نژاد',
+    demoCartLabel:'INTERACTIVE DEMO',cartTitle:'سبد خرید نمایشی',subtotal:'مجموع نمونه',cartDisclaimer:'این سبد صرفاً نمایشی است. هیچ سفارش یا پرداختی ثبت نمی‌شود.',clearCart:'خالی‌کردن سبد',cartEmpty:'سبد نمایشی خالی است.',
+    added:'محصول به سبد نمایشی اضافه شد.',cartCleared:'سبد نمایشی خالی شد.',fitmentApplied:'فیلتر قطعات سازگار فعال شد.',yearLabel:'سال شمسی'
+  },
+  en: {
+    demoNotice:'Independent technical demo — all parts, prices and vehicle fitment information are fictional; not valid for purchases.',
+    brandTagline:'Automotive parts storefront concept',designedBy:'Designed & built by',cart:'Cart',
+    eyebrow:'AUTOMOTIVE COMMERCE SHOWCASE',
+    heroTitle:'The right part for <em>the right car.</em><br>Smarter fitment, simpler browsing.',
+    heroDescription:'A bilingual shopping experience for selecting a vehicle, browsing compatible example parts, and exploring a focused automotive catalog. Built as a practical storefront UX demonstration.',
+    heroPoint1:'Guided vehicle selection',heroPoint2:'Parts compatibility',heroPoint3:'Technical-code search',
+    metricVehicles:'Vehicle configurations',metricProducts:'Demo products',metricLanguages:'Languages & layouts',
+    finderBadge:'VEHICLE FITMENT DEMO',finderTitle:'Find parts for your car',finderLead:'Choose the make, model, model year and trim to filter fictional compatible parts.',
+    fieldMake:'Vehicle make',fieldModel:'Vehicle model',fieldYear:'Production year',fieldTrim:'Trim / engine',
+    selectMake:'Select make',selectModel:'Select model',selectYear:'Select year',selectTrim:'Select trim',
+    showCompatible:'View compatible parts',finderHint:'Fitment records exist for demonstration only and are not verified.',
+    vehicleSelected:'Selected vehicle:',catalogEyebrow:'DEMO PRODUCT CATALOG',catalogTitle:'Explore spare parts',
+    catalogAll:'Showing {count} sample parts',catalogFiltered:'Showing {count} sample parts matching {vehicle}',filterActive:'Vehicle filter active',
+    searchPlaceholder:'Search a part name, brand, or SKU (e.g. BR-102)',sortBy:'Sort:',sortFeatured:'Featured',sortPriceAsc:'Price: low to high',sortPriceDesc:'Price: high to low',
+    all:'All parts',engine:'Engine',brakes:'Brakes',filters:'Filters',electrical:'Electrical',
+    demoProduct:'Demo item',compatible:'Demo match',partCode:'Part no.',currency:'Toman',addToCart:'Add to cart',
+    empty:'No sample parts matched. Try another search or clear the filters.',clearFilters:'Clear filters',catalogFootnote:'All data is illustrative. There is no live inventory, checkout, or payment processing.',
+    aboutEyebrow:'ABOUT THE WORK',aboutTitle:'A prototype built around a real product challenge',aboutBody:'I designed and developed this technical showcase to demonstrate vehicle-based product discovery, the concept of part-to-vehicle fitment, responsive UX, and accurate Persian/English layout switching. This is an interactive prototype, not a completed client store.',
+    builtBy:'Designed and developed by',footerDisclaimer:'Non-commercial demo — no real orders or payments',footerCredit:'Portfolio project by Mahdi Shoghinezhad',
+    demoCartLabel:'INTERACTIVE DEMO',cartTitle:'Demo shopping cart',subtotal:'Demo subtotal',cartDisclaimer:'This is a demonstration cart. It cannot place orders or take payments.',clearCart:'Clear cart',cartEmpty:'Your demo cart is empty.',
+    added:'Added to the demonstration cart.',cartCleared:'Demonstration cart cleared.',fitmentApplied:'Vehicle compatibility filter applied.',yearLabel:'Solar Hijri year'
+  }
+};
+const $ = id => document.getElementById(id);
+const escapeHTML = v => String(v).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+const state = {lang:'fa',make:'',model:'',year:'',trim:'',vehicle:null,category:'all',search:'',sort:'default',cart:new Map()};
+let toastTimer;
+function getText(key){return TEXT[state.lang][key] || key}
+function format(value){return Number(value).toLocaleString(state.lang === 'fa' ? 'fa-IR' : 'en-US')}
+function money(value){return format(value)+' '+getText('currency')}
+function named(value){return value[state.lang]}
+function vehicleName(v){return [named(v.make),named(v.model),format(v.year),named(v.trim)].join(' / ')}
+function fillSelect(id,placeholder,options,value=''){
+  const el=$(id);el.replaceChildren();
+  const first=document.createElement('option');first.value='';first.textContent=getText(placeholder);el.append(first);
+  options.forEach(([v,label])=>{const opt=document.createElement('option');opt.value=v;opt.textContent=label;el.append(opt)});
+  el.disabled=options.length===0;el.value=options.some(([v])=>v===value)?value:'';
+}
+function uniqueLocalized(field,vehicles){
+  const found=new Map();for (const v of vehicles){const obj=v[field];const key=obj.fa;if(!found.has(key))found.set(key,[key,obj[state.lang]]);}return [...found.values()];
+}
+function populateVehicleSelectors(){
+  fillSelect('vehicle-make','selectMake',uniqueLocalized('make',VEHICLES),state.make);
+  const byMake=VEHICLES.filter(v=>v.make.fa===state.make);
+  fillSelect('vehicle-model','selectModel',uniqueLocalized('model',byMake),state.model);
+  const byModel=byMake.filter(v=>v.model.fa===state.model);
+  fillSelect('vehicle-year','selectYear',[...new Set(byModel.map(v=>v.year))].map(v=>[v,format(v)]),state.year);
+  const byYear=byModel.filter(v=>v.year===state.year);
+  fillSelect('vehicle-trim','selectTrim',uniqueLocalized('trim',byYear),state.trim);
+  $('apply-fitment').disabled=!(state.make&&state.model&&state.year&&state.trim);
+}
+function renderLanguage(){
+  document.documentElement.lang=state.lang;document.documentElement.dir=state.lang==='fa'?'rtl':'ltr';
+  document.body.dir=document.documentElement.dir;
+  document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=getText(el.dataset.i18n));
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+    // The dictionary contains only hand-authored static headings with em and br tags.
+    el.innerHTML=getText(el.dataset.i18nHtml);
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>el.placeholder=getText(el.dataset.i18nPlaceholder));
+  $('lang-label').textContent=state.lang==='fa'?'English':'فارسی';
+  $('lang-toggle').setAttribute('aria-label',state.lang==='fa'?'Switch to English':'تغییر زبان به فارسی');
+  document.title=state.lang==='fa'?'PartSync | نمونه فروشگاه قطعات خودرو — مهدی شوقی‌نژاد':'PartSync | Automotive Parts Demo — Mahdi Shoghinezhad';
+  populateVehicleSelectors();renderCategories();renderCatalog();renderCart();
+  $('vehicle-status').textContent=state.vehicle?getText('vehicleSelected')+' '+vehicleName(state.vehicle):'';
+}
+function renderCategories(){
+  const target=$('category-wrap');target.replaceChildren();
+  for(const cat of CATEGORIES){const btn=document.createElement('button');btn.type='button';btn.className='category-pill'+(state.category===cat?' active':'');btn.textContent=getText(cat);btn.dataset.category=cat;btn.setAttribute('aria-pressed',String(state.category===cat));btn.addEventListener('click',()=>{state.category=cat;renderCategories();renderCatalog()});target.append(btn);}
+}
+function filteredProducts(){
+  const q=state.search.trim().toLocaleLowerCase();
+  const filtered=PRODUCTS.filter(p=>{
+    if(state.vehicle && !p.fit.includes(state.vehicle.id))return false;
+    if(state.category!=='all' && p.category!==state.category)return false;
+    if(!q)return true;
+    const text=[p.sku,p.name.fa,p.name.en,p.brand.fa,p.brand.en,getText(p.category)].join(' ').toLocaleLowerCase();
+    return text.includes(q);
+  });
+  if(state.sort==='priceAsc')filtered.sort((a,b)=>a.price-b.price);
+  if(state.sort==='priceDesc')filtered.sort((a,b)=>b.price-a.price);
+  return filtered;
+}
+function renderCatalog(){
+  const rows=filteredProducts();
+  $('catalog-subtitle').textContent=(state.vehicle?getText('catalogFiltered'):getText('catalogAll'))
+    .replace('{count}',format(rows.length)).replace('{vehicle}',state.vehicle?vehicleName(state.vehicle):'');
+  $('fitment-chip').hidden=!state.vehicle;
+  $('clear-filters').hidden=!(state.vehicle||state.category!=='all'||state.search);
+  const grid=$('product-grid');grid.replaceChildren();
+  if(!rows.length){const empty=document.createElement('div');empty.className='empty-state';empty.textContent=getText('empty');grid.append(empty);return}
+  for(const p of rows){const card=document.createElement('article');card.className='product-card';
+    card.innerHTML=`<div class="product-illustration"><span class="product-badge ${state.vehicle?'':'base'}">${escapeHTML(getText(state.vehicle?'compatible':'demoProduct'))}</span><div class="part-glyph" aria-hidden="true">${escapeHTML(p.icon)}</div></div><div class="product-body"><div class="product-brand">${escapeHTML(named(p.brand))} · ${escapeHTML(getText(p.category))}</div><h3 class="product-name">${escapeHTML(named(p.name))}</h3><div class="product-sku">${escapeHTML(getText('partCode'))}: ${escapeHTML(p.sku)}</div><div class="product-divider"></div><div class="product-bottom"><div class="product-price">${format(p.price)} <small>${escapeHTML(getText('currency'))}</small></div><button type="button" class="add-btn" aria-label="${escapeHTML(getText('addToCart')+' '+named(p.name))}">+</button></div></div>`;
+    card.querySelector('.add-btn').addEventListener('click',()=>addCart(p.id));grid.append(card);
+  }
+}
+function addCart(id){state.cart.set(id,(state.cart.get(id)||0)+1);renderCart();showToast(getText('added'))}
+function renderCart(){
+  const count=[...state.cart.values()].reduce((a,b)=>a+b,0);
+  $('cart-count').textContent=format(count);
+  const root=$('cart-items');root.replaceChildren();let total=0;
+  for(const [id,qty] of state.cart){const p=PRODUCTS.find(p=>p.id===id);if(!p)continue;total+=qty*p.price;
+    const el=document.createElement('div');el.className='cart-line';el.innerHTML=`<div><strong>${escapeHTML(named(p.name))}</strong><small>${escapeHTML(p.sku)}</small><small>${escapeHTML(money(p.price))}</small></div><div class="quantity-controls"><button type="button" aria-label="Decrease quantity">−</button><span>${format(qty)}</span><button type="button" aria-label="Increase quantity">+</button></div>`;
+    const btns=el.querySelectorAll('button');btns[0].addEventListener('click',()=>changeQty(id,-1));btns[1].addEventListener('click',()=>changeQty(id,1));root.append(el);
+  }
+  if(!state.cart.size){const empty=document.createElement('div');empty.className='cart-empty';empty.textContent=getText('cartEmpty');root.append(empty)}
+  $('cart-total').textContent=money(total);$('cart-clear').disabled=!state.cart.size;
+}
+function changeQty(id,delta){const next=(state.cart.get(id)||0)+delta;if(next<=0)state.cart.delete(id);else state.cart.set(id,next);renderCart()}
+function showToast(message){const el=$('toast');el.textContent=message;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),2300)}
+function openCart(){const overlay=$('overlay');overlay.hidden=false;$('cart-drawer').setAttribute('aria-hidden','false');document.body.style.overflow='hidden';$('cart-close').focus()}
+function closeCart(){const overlay=$('overlay');overlay.hidden=true;$('cart-drawer').setAttribute('aria-hidden','true');document.body.style.overflow='';$('cart-open').focus()}
+$('vehicle-make').addEventListener('change',e=>{state.make=e.target.value;state.model=state.year=state.trim='';populateVehicleSelectors()});
+$('vehicle-model').addEventListener('change',e=>{state.model=e.target.value;state.year=state.trim='';populateVehicleSelectors()});
+$('vehicle-year').addEventListener('change',e=>{state.year=e.target.value;state.trim='';populateVehicleSelectors()});
+$('vehicle-trim').addEventListener('change',e=>{state.trim=e.target.value;populateVehicleSelectors()});
+$('apply-fitment').addEventListener('click',()=>{
+  const selected=VEHICLES.find(v=>v.make.fa===state.make&&v.model.fa===state.model&&v.year===state.year&&v.trim.fa===state.trim);
+  if(!selected)return;state.vehicle=selected;state.category='all';state.search='';$('catalog-search').value='';
+  $('vehicle-status').textContent=getText('vehicleSelected')+' '+vehicleName(selected);renderCategories();renderCatalog();showToast(getText('fitmentApplied'));
+  $('catalog').scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});
+});
+$('catalog-search').addEventListener('input',e=>{state.search=e.target.value;renderCatalog()});
+$('catalog-sort').addEventListener('change',e=>{state.sort=e.target.value;renderCatalog()});
+$('clear-filters').addEventListener('click',()=>{state.vehicle=null;state.category='all';state.search='';$('catalog-search').value='';$('vehicle-status').textContent='';renderCategories();renderCatalog()});
+$('lang-toggle').addEventListener('click',()=>{state.lang=state.lang==='fa'?'en':'fa';renderLanguage()});
+$('cart-open').addEventListener('click',openCart);$('cart-close').addEventListener('click',closeCart);$('overlay').addEventListener('click',closeCart);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('cart-drawer').getAttribute('aria-hidden')==='false')closeCart()});
+$('cart-clear').addEventListener('click',()=>{state.cart.clear();renderCart();showToast(getText('cartCleared'))});
+renderLanguage();
+
+</script>
+</body>
+</html>
